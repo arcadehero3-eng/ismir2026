@@ -15,10 +15,10 @@ This repository provides all code, synthesised audio, figures, and notebooks nee
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/chenda-pgsd
+git clone https://github.com/arcadehero3-eng/ismir2026
 cd chenda-pgsd
 pip install -r requirements.txt
-python src/pgsd_v3.py          # runs all four tasks, prints results
+python src/pgsd_v3.py          # runs all three tasks, prints results
 python src/generate_eigenmodes.py  # regenerates eigenmode figures
 ```
 
@@ -31,7 +31,7 @@ chenda-pgsd/
 │
 ├── src/                          # Core Python source code
 │   ├── spectral_solver.py        # Fourier-Chebyshev eigensolver (Section 2)
-│   ├── pgsd_v3.py                # Full PGSD framework — all 4 tasks (Section 3)
+│   ├── pgsd_v3.py                # Full PGSD framework — all 3 tasks (Section 3)
 │   ├── generate_eigenmodes.py    # Eigenmode visualisation script
 │   ├── baselines.py              # All baseline methods (FFT-PT, NMF, ESPRIT, MLP)
 │   └── baseline_experiment.py   # Baseline vs PGSD comparison runner
@@ -71,14 +71,13 @@ chenda-pgsd/
 
 ---
 
-## The four diagnostic tasks
+## The Three diagnostic tasks
 
 | Task | What PGSD recovers | Method | Result |
 |------|--------------------|--------|--------|
 | T1 | Membrane tension (N/m) | f₁ scaling law | Mean error 0.32–4.41% |
 | T2 | Strike position (r/R) | Signal-level template matching | 0.3%R (sub-mm) |
 | T3 | Skin condition index (0–100) | T60 from bandpass envelope | MAE = 0, monotone |
-| T4 | Shell shape (Cylinder/Hourglass/Oval) | R² model selection | 100% correct |
 
 ---
 
